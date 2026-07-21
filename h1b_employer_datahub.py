@@ -3,7 +3,7 @@ from pathlib import Path
 
 base_dir = Path(__file__).resolve().parent
 data_dir = base_dir / 'data'
-output_unpivoted = base_dir / 'h1b_employer_datahub_unpivoted.csv.gz'
+output_unpivoted = base_dir / 'h1b_hub.csv.gz'
 
 csv_files = sorted(data_dir.glob('*.csv'))
 print(f'Found {len(csv_files)} CSV files')
