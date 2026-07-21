@@ -18,7 +18,7 @@ for path in csv_files:
 
     rename_map = {
         'Fiscal Year   ': 'Fiscal Year',
-        'Employer (Petitioner) Name': 'Sort',
+        'Employer (Petitioner) Name': 'Employer (Petitioner) Name',
         'Industry (NAICS) Code': 'Industry (NAICS) Code',
         'Tax ID': 'Tax ID',
         'Petitioner State': 'Petitioner State',
@@ -34,14 +34,14 @@ for path in csv_files:
     df['Fiscal Year'] = year
 
     keep_cols = [
-        'Fiscal Year', 'Sort', 'Industry (NAICS) Code', 'Tax ID', 'Petitioner State', 'Petitioner City', 'Petitioner Zip Code',
+        'Fiscal Year', 'Employer (Petitioner) Name', 'Industry (NAICS) Code', 'Tax ID', 'Petitioner State', 'Petitioner City', 'Petitioner Zip Code',
         'New Employment Approval', 'New Employment Denial', 'Continuing Approval', 'Continuing Denial'
     ]
     df = df[[c for c in keep_cols if c in df.columns]]
     frames.append(df)
 
 consolidated = pd.concat(frames, ignore_index=True)
-consolidated = consolidated.fillna({'Sort': '', 'Petitioner State': '', 'Petitioner City': '', 'Petitioner Zip Code': ''})
+consolidated = consolidated.fillna({'Employer (Petitioner) Name': '', 'Petitioner State': '', 'Petitioner City': '', 'Petitioner Zip Code': ''})
 
 value_columns = ['New Employment Approval', 'New Employment Denial', 'Continuing Approval', 'Continuing Denial']
 for col in value_columns:
@@ -49,7 +49,7 @@ for col in value_columns:
 
 consolidated['Fiscal Year'] = consolidated['Fiscal Year'].astype('int16')
 
-for col in ['Sort', 'Industry (NAICS) Code', 'Petitioner State', 'Petitioner City', 'Petitioner Zip Code']:
+for col in ['Employer (Petitioner) Name', 'Industry (NAICS) Code', 'Petitioner State', 'Petitioner City', 'Petitioner Zip Code']:
     if col in consolidated.columns and consolidated[col].nunique(dropna=False) <= max(1000, len(consolidated) // 10):
         consolidated[col] = consolidated[col].astype('category')
 
@@ -58,14 +58,14 @@ if output_unpivoted.exists():
     output_unpivoted.unlink()
 
 unpivoted = consolidated.melt(
-    id_vars=['Fiscal Year', 'Sort', 'Tax ID', 'Industry (NAICS) Code', 'Petitioner City', 'Petitioner State', 'Petitioner Zip Code'],
+    id_vars=['Fiscal Year', 'Employer (Petitioner) Name', 'Tax ID', 'Industry (NAICS) Code', 'Petitioner City', 'Petitioner State', 'Petitioner Zip Code'],
     value_vars=value_columns,
-    var_name='Decision',
-    value_name='Petitions'
+    var_name='Pivot Field Names',
+    value_name='Pivot Field Values'
 )
-unpivoted = unpivoted.sort_values(['Fiscal Year', 'Sort', 'Decision']).reset_index(drop=True)
+unpivoted = unpivoted.sort_values(['Fiscal Year', 'Employer (Petitioner) Name', 'Pivot Field Names']).reset_index(drop=True)
 unpivoted['Fiscal Year'] = unpivoted['Fiscal Year'].astype('int16')
-unpivoted['Decision'] = unpivoted['Decision'].astype('category')
-unpivoted['Petitions'] = unpivoted['Petitions'].astype('int32')
+unpivoted['Pivot Field Names'] = unpivoted['Pivot Field Names'].astype('category')
+unpivoted['Pivot Field Values'] = unpivoted['Pivot Field Values'].astype('int32')
 unpivoted.to_csv(output_unpivoted, index=False, compression='gzip')
 print(f'Saved unpivoted CSV to {output_unpivoted}')
