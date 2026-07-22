@@ -24,8 +24,8 @@ for path in csv_files:
         'Petitioner State': 'Petitioner State',
         'Petitioner City': 'Petitioner City',
         'Petitioner Zip Code': 'Petitioner Zip Code',
-        'New Employment Approval': 'New Employment Approval',
-        'New Employment Denial': 'New Employment Denial',
+        'New Employment Approval': 'New Approval',
+        'New Employment Denial': 'New Denial',
         'Continuation Approval': 'Continuing Approval',
         'Continuation Denial': 'Continuing Denial',
     }
@@ -35,7 +35,7 @@ for path in csv_files:
 
     keep_cols = [
         'Fiscal Year', 'Employer (Petitioner) Name', 'Industry (NAICS) Code', 'Tax ID', 'Petitioner State', 'Petitioner City', 'Petitioner Zip Code',
-        'New Employment Approval', 'New Employment Denial', 'Continuing Approval', 'Continuing Denial'
+        'New Approval', 'New Denial', 'Continuing Approval', 'Continuing Denial'
     ]
     df = df[[c for c in keep_cols if c in df.columns]]
     frames.append(df)
@@ -43,7 +43,7 @@ for path in csv_files:
 consolidated = pd.concat(frames, ignore_index=True)
 consolidated = consolidated.fillna({'Employer (Petitioner) Name': '', 'Petitioner State': '', 'Petitioner City': '', 'Petitioner Zip Code': ''})
 
-value_columns = ['New Employment Approval', 'New Employment Denial', 'Continuing Approval', 'Continuing Denial']
+value_columns = ['New Approval', 'New Denial', 'Continuing Approval', 'Continuing Denial']
 for col in value_columns:
     consolidated[col] = pd.to_numeric(consolidated[col], errors='coerce').fillna(0).astype('int32')
 
