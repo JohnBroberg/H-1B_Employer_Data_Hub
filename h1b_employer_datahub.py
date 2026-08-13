@@ -43,9 +43,16 @@ pivot_field_map = {
     'Amended Denial': 'Continuing Denial',
 }
 
+
+def clean_numeric_column(series):
+    cleaned = series.astype('string').str.strip().str.replace(',', '', regex=False)
+    cleaned = cleaned.replace({'': '0', 'nan': '0', 'NaN': '0', 'N/A': '0', 'NA': '0'})
+    return pd.to_numeric(cleaned, errors='coerce').fillna(0).astype('int32')
+
+
 for col in list(pivot_field_map.keys()):
     if col in consolidated.columns:
-        consolidated[col] = pd.to_numeric(consolidated[col], errors='coerce').fillna(0).astype('int32')
+        consolidated[col] = clean_numeric_column(consolidated[col])
 
 consolidated['Fiscal Year'] = consolidated['Fiscal Year'].astype('int16')
 
