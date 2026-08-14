@@ -56,7 +56,7 @@ The dashboard visualizes trends, employer statistics, approvals, and denials acr
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/JohnBroberg/H-1B_Employer_Data_Hub.git
    cd H-1B_Employer_Data_Hub
    ```
 
