@@ -12,7 +12,7 @@ H-1B is a visa category in the United States that allows employers to temporaril
 
 Explore the data through our interactive Tableau dashboard:
 
-**<a href="https://public.tableau.com/app/profile/john.broberg/viz/H-1BVisaPetitions2026/H-1BVisaPetitions" target="_blank">H-1B Visa Petitions 2026 Dashboard</a>**
+**[H-1B Visa Petitions 2026 Dashboard](https://public.tableau.com/app/profile/john.broberg/viz/H-1BVisaPetitions2026/H-1BVisaPetitions)**
 
 The dashboard visualizes trends, employer statistics, approvals, and denials across multiple years and geographic locations.
 
@@ -56,7 +56,7 @@ The dashboard visualizes trends, employer statistics, approvals, and denials acr
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/JohnBroberg/H-1B_Employer_Data_Hub.git
+   git clone <repository-url>
    cd H-1B_Employer_Data_Hub
    ```
 
