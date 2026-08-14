@@ -12,7 +12,7 @@ H-1B is a visa category in the United States that allows employers to temporaril
 
 Explore the data through our interactive Tableau dashboard:
 
-**[H-1B Visa Petitions 2026 Dashboard](https://public.tableau.com/app/profile/john.broberg/viz/H-1BVisaPetitions2026/H-1BVisaPetitions)**
+**[H-1B Visa Petitions 2026 Dashboard](https://public.tableau.com/app/profile/john.broberg/viz/H-1BVisaPetitions2026/H-1BVisaPetitions){:target="_blank"}**
 
 The dashboard visualizes trends, employer statistics, approvals, and denials across multiple years and geographic locations.
 
