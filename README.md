@@ -16,6 +16,8 @@ Explore the data through our interactive Tableau dashboard:
 
 The dashboard visualizes trends, employer statistics, approvals, and denials across multiple years and industries.
 
+![H-1B Dashboard Screenshot](images/dashboard-screenshot.png)
+
 ## Project Contents
 
 ### Data Files
