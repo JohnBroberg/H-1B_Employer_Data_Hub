@@ -30,7 +30,7 @@ The dashboard visualizes trends, employer statistics, approvals, and denials acr
 
 - **`data/`** - Individual annual H-1B employer data files (2009-2026)
   - Each file contains employer petitions for a specific fiscal year
-  - Source: [U.S. Department of Labor, Office of Foreign Labor Certification](https://www.dol.gov/agencies/eta/foreign-labor/performance)
+  - Source: [H-1B Employer Data Hub](https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub)
 
 ### Scripts
 
