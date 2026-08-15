@@ -108,4 +108,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Data Attribution
 
-H-1B employer data sourced from the U.S. Department of Labor Office of Foreign Labor Certification. For more information on H-1B visa programs and statistics, visit [OFLC Data Center](https://www.dol.gov/agencies/eta/foreign-labor/performance).
+H-1B employer data sourced from the U.S. Citizenship and Immigration Services. For more information on H-1B visa programs and statistics, visit [Understanding Our H-1B Employer Data Hub](https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub/understanding-our-h-1b-employer-data-hub).
