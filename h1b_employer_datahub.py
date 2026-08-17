@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+import json
 
 base_dir = Path(__file__).resolve().parent
 data_dir = base_dir / 'data'
@@ -57,7 +58,6 @@ for col in list(pivot_field_map.keys()):
 consolidated['Fiscal Year'] = consolidated['Fiscal Year'].astype('int16')
 
 # Load company mappings from JSON configuration file
-import json
 with open(base_dir / 'company_mappings.json', 'r') as f:
     company_variants = json.load(f)
 
