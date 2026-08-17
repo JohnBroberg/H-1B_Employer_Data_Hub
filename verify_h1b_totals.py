@@ -21,9 +21,17 @@ consolidated = consolidated.fillna({
 
 source_cols = [
     'New Employment Approval',
+    'New Employment Denial',
     'Continuation Approval',
+    'Continuation Denial',
     'Change with Same Employer Approval',
+    'Change with Same Employer Denial',
+    'New Concurrent Approval',
+    'New Concurrent Denial',
+    'Change of Employer Approval',
+    'Change of Employer Denial',
     'Amended Approval',
+    'Amended Denial',
 ]
 
 for col in source_cols:
