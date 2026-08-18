@@ -52,4 +52,4 @@ output_totals = {
 print('SOURCE', source_totals)
 print('OUTPUT', output_totals)
 print('DIFF', {k: source_totals[k] - output_totals.get(k, 0) for k in source_totals})
-assert source_totals == output_totals
+assert source_totals == output_totals, f"Totals do not match: {source_totals} != {output_totals}"
