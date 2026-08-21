@@ -1,4 +1,5 @@
-"""Build a normalized, analyst-friendly H-1B employer dataset for dashboarding and portfolio storytelling.
+"""
+Build a normalized, analyst-friendly H-1B employer dataset for dashboarding and portfolio storytelling.
 
 This script ingests annual H-1B CSV files, standardizes inconsistent naming conventions,
 converts raw count metrics into a single clean fact table, and exports a compressed CSV that
