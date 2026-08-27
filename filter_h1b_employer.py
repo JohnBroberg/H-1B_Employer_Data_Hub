@@ -8,8 +8,8 @@ base_dir = Path(__file__).resolve().parent
 input_file = base_dir / 'h1b_hub.csv.gz'
 
 # Change this value for each search.
-search_term = 'Texas A&M'
-canonical_name = 'TEXAS A&M UNIVERSITY'
+search_term = 'texas a and m'
+canonical_name = search_term.upper()
 column_to_search = 'Employer (Petitioner) Name'
 
 unpivoted = pd.read_csv(input_file, low_memory=False)
