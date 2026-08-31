@@ -8,7 +8,7 @@ base_dir = Path(__file__).resolve().parent
 input_file = base_dir / 'h1b_hub.csv.gz'
 
 # Change this value for each search.
-search_term = 'univ of tx'
+search_term = 'uni of tx'
 canonical_name = search_term.upper()
 column_to_search = 'Employer (Petitioner) Name'
 
