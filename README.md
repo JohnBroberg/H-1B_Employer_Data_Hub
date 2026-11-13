@@ -82,6 +82,23 @@ This will:
 - Consolidate and standardize the data
 - Create `h1b_hub.csv.gz` ready for analysis
 
+### Update the Data Every Quarter
+
+1. Go to the USCIS H-1B Employer Data Hub: https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub
+2. Click the **Crosstab View** button.
+3. Click the **Download to Excel** button.
+4. Select **CSV** and click **Download**.
+5. Extract the ZIP file.
+6. Convert the CSV to UTF-8 format.
+7. Upload the updated CSV into the `data/` folder, replacing the existing file if needed.
+8. Run the pipeline:
+
+```bash
+python h1b_employer_datahub.py
+```
+
+This refreshes the consolidated dataset with the latest quarterly H-1B employer data.
+
 ### Verify Data Integrity
 
 To validate the processed data:
